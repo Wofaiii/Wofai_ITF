@@ -301,8 +301,8 @@ console.log(remote)
   calling the function
   functionName();
  */
-function greetUser() {
-   console.log('Good Morning Ms. Wofai!')
+function greetUser(name = 'Chile', title='Mr') {
+   console.log(`Good Morning ${title}. ${name}!`)
 }
 //* using arow function
 /**
@@ -322,16 +322,104 @@ greetUser2()
 //! Assigment
 //? Hoisting in Js
 //?how to make a function dynamic
-function setFunc (ex){
-   this [ex] = function() {
-      alert('I am ' + ex);
-   }
+//Create a function that sums any two numbers
+function sumNumbers(x=3,y=4){
+   console.log(x+y);
 }
-setFunc = ('totop');
-console.log(setFunc)
-//?how to return values fom a function
-function greetOwner (CJ){
-   return "Hello" + CJ;
-   console.log(CJ) 
+
+sumNumbers()
+function multiply(h=5,g=5){
+   console.log(h*g);
 }
-//?List 4 javascript conditionals
+
+multiply()
+//create a function that subtracts any 3 numbers
+function subtract(a=10,b=5,c=3){
+   console.log(a-b-c);
+}
+
+subtract(12,5,3)
+//?Returning a function in javascript
+function subThree(a=3,b=2,c=1){
+   return a-b-c;
+}
+
+console.log(subThree(12,7)*5)
+//Create a function that adds, multplies, subtracts and divides any two numbers
+function amsd(a=5,b=4,c=3,d=2,e=1){
+   let add = a+b+c+d+e;
+   let subt = a-b-c-d-e;
+   let multiply = a*b*c*d*e;
+   let divide = a/b/c/d/e;
+   //return[add,subt,multiply,divide]
+   return{add,subt,multiply,divide}
+}
+//?destructure
+//let [add, subt] = amsd();
+let {add, subt} = amsd();
+console.log(amsd())
+console.log(add,subt)
+
+
+
+//! CONDITIONALS
+let input = prompt ('Please type a number from 0-10');
+// //if
+// if(Number(input) > 5) {
+//    console.log('is greater than 5')
+// }else{
+//    console.log('is less than 5')
+// }
+// let input = prompt ('Please enter your Age:');
+// if (Number(input)>17){
+//    console.log('Can drink alcohol');
+// }else if(Number(input)>15 && Number(input) <=17){
+//    console.log('Can drink alcohol under parents supervision')
+// }else if(Number(input)>10 && Number(input) <=15){
+//    console.log('I recommend Hollandia Yoghurt')
+// }else{
+//    console.log('I recommend Water')
+// }
+// switch (Number(input)) {
+//    case 19:
+//    case 18:
+//       console.log('Can drink alcohol');
+//       break;
+//    case 16:
+//    case 17:
+//       console.log('Can drink alcohol under parents supervision');
+//    case 10:
+//    case 11:
+//    case 12:
+//    case 13:
+//    case 14:
+//    case 15:
+//       console.log('I recommend Hollandia');      
+
+//    default:
+
+//    console.log('I recommend Water')
+//       break;
+// }
+// if(Number(input)>=18){
+//    console.log('Can drink alcohol')
+//    console.log('What is your brand?')
+// }else{
+//    console.log('Cannot drink alcohol')
+// }
+
+/* 
+  if (condition) {
+  code block;
+  }
+*/
+//?Tenary operator
+//condition? statement to run if true: statement torun if false;
+if(Number(input)>=18 ? console.log('Can drink alcohol'): console.log('Cannot drink alcohol!'));
+
+//? conditional rendering
+
+// condition && statement to run if true;
+
+Number(input)>= 50 & console.log('Please stop drinking alcohol or drink in moderation');
+!(Number(input)>= 50) & console.log('Drink alcohol responsbly');
